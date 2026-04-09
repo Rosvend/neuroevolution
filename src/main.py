@@ -1,4 +1,5 @@
 import os
+from src.data.downloader import DatasetDownloader
 from src.data.loader import DataLoaderFactory
 from src.models.evaluator import ModelEvaluator
 from src.optimization.genetic_algorithm import GeneticOptimizer
@@ -10,12 +11,15 @@ class ExperimentRunner:
         self.test_path = test_path
         self.generations = generations
         self.population_size = population_size
+        self.downloader = DatasetDownloader()
         self.data_loader_factory = DataLoaderFactory(train_path, test_path)
         self.evaluator = ModelEvaluator()
         self.optimizer = GeneticOptimizer(population_size=population_size)
         self.fitness_history = []
 
     def run(self):
+        self.downloader.download_and_extract()
+        
         if not os.path.exists(self.train_path) or not os.path.exists(self.test_path):
             print("Dataset not found. Please ensure sign_mnist_train.csv and sign_mnist_test.csv exist.")
             return
