@@ -10,7 +10,8 @@ dependencies = [
     "numpy>=1.26.0",
     "matplotlib>=3.8.0",
     "scikit-learn>=1.4.0",
-    "kaggle>=1.6.0"
+    "kaggle>=1.6.0",
+    "optuna>=3.6.0"
 ]
 
 [build-system]
