@@ -32,7 +32,9 @@ class GeneticOptimizer:
             if individual.fitness == 0.0:
                 individual.fitness = evaluator.evaluate(individual.chromosome, train_loader, val_loader)
 
-        new_population = []
+        self.best_individual = max(self.population, key=lambda individual: individual.fitness)
+
+        new_population = [Individual(self.best_individual.chromosome[:], self.best_individual.fitness)]
         while len(new_population) < self.population_size:
             parent_1 = self.select_parent()
             parent_2 = self.select_parent()
@@ -44,4 +46,4 @@ class GeneticOptimizer:
         self.population = new_population
 
     def get_best_individual(self):
-        return max(self.population, key=lambda individual: individual.fitness)
+        return getattr(self, 'best_individual', self.population[0])

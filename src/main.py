@@ -33,6 +33,10 @@ class ExperimentRunner:
             self.fitness_history.append(best_individual.fitness)
             print(f"Generation {generation+1}: Best Fitness = {best_individual.fitness:.4f}")
 
+        final_best = self.optimizer.get_best_individual()
+        print(f"\nFinal Best Topology (Hidden Layers): {final_best.chromosome}")
+        print(f"Final Best Accuracy: {final_best.fitness:.4f}\n")
+
         TrainingVisualizer.plot_fitness_evolution(self.fitness_history)
 
 if __name__ == "__main__":

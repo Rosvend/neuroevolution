@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.optim as optim
 
 class ModelEvaluator:
-    def __init__(self, input_dim=784, output_dim=24, epochs=5, learning_rate=0.001):
+    def __init__(self, input_dim=784, output_dim=24, epochs=1, learning_rate=0.001):
         self.input_dim = input_dim
         self.output_dim = output_dim
         self.epochs = epochs
