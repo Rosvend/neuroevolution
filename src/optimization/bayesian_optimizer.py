@@ -1,7 +1,7 @@
 import optuna
 
 class BayesianOptimizer:
-    def __init__(self, total_trials=50, maximum_layers=5, minimum_neurons=16, maximum_neurons=512):
+    def __init__(self, total_trials=100, maximum_layers=5, minimum_neurons=16, maximum_neurons=512):
         self.total_trials = total_trials
         self.maximum_layers = maximum_layers
         self.minimum_neurons = minimum_neurons

@@ -36,8 +36,9 @@ class OptimizationRunner:
         OptimizationVisualizer.render_history_plot(self.optimizer.study)
 
 if __name__ == "__main__":
-    TRAINING_CSV_PATH = "datamunge/sign-language-mnist/sign_mnist_train.csv"
-    TESTING_CSV_PATH = "datamunge/sign-language-mnist/sign_mnist_test.csv"
+        TRAINING_CSV_PATH = "datamunge/sign-language-mnist/sign_mnist_train.csv"
+        TESTING_CSV_PATH = "datamunge/sign-language-mnist/sign_mnist_test.csv"
+        
+        optimization_instance = OptimizationRunner(TRAINING_CSV_PATH, TESTING_CSV_PATH, total_trials=100)
+        optimization_instance.execute()
     
-    optimization_instance = OptimizationRunner(TRAINING_CSV_PATH, TESTING_CSV_PATH, total_trials=20)
-    optimization_instance.execute()
