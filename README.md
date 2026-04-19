@@ -42,3 +42,18 @@ To run the optimization trials (default 100 trials):
 uv run python src/main.py
 ```
 The script will display the results for each trial, the final best architecture found, and a visualization of the accuracy evolution.
+
+## Best Topology (Latest Run)
+- **Best Accuracy:** `0.8595`
+- **Hidden Layers:** `3`
+- **Neurons per Hidden Layer:** `691 -> 454 -> 311`
+- **Dropout:** `0.011454877536237876`
+- **BatchNorm:** `True`
+- **Activation:** `relu`
+- **Learning Rate:** `0.0009261286697548934`
+- **Weight Decay:** `5.3560134445619983e-05`
+- **Optimizer:** `rmsprop`
+- **Gradient Clip Norm:** `4.367175416165777`
+- **Epochs:** `24`
+
+![Best topology and optimization result](image.png)
