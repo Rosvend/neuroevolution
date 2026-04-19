@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 
 class OptimizationVisualizer:
     @staticmethod
-    def render_history_plot(study):
+    def render_history_plot(study, output_path=None):
         history_dataframe = study.trials_dataframe()
         
         plt.figure(figsize=(10, 6))
@@ -11,4 +11,10 @@ class OptimizationVisualizer:
         plt.xlabel('Trial Number')
         plt.ylabel('Accuracy Value')
         plt.grid(True)
+
+        if output_path:
+            plt.savefig(output_path, dpi=150, bbox_inches="tight")
+            plt.close()
+            return
+
         plt.show()
